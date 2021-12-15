@@ -33,28 +33,30 @@ public class Cliente implements Serializable {
 	
 	@JsonManagedReference            //CLIENTE SERIALIZA ENDEREÇO
 	@OneToMany(mappedBy= "cliente") // MAPEADO PELO CAMPO CLIENTE
-	private List<Endereco> endereco = new ArrayList<>();
+	private List<Endereco> endereco = new ArrayList<>(); //ASSOCIAÇÃO 
 	
 	@ElementCollection
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>(); // coleção de string associado ao cliente // Set (CONJUNTO)
-													// SET NÃO ACEITA REPETIÇÃO // HashSet =Classe para ser estanciada 
+													// SET NÃO ACEITA REPETIÇÃO // HashSet =Classe para ser estanciada
+	@OneToMany(mappedBy= "cliente")
+	private List<Pedido> pedidos = new ArrayList<>();
 	
 
-public Cliente() {
+	public Cliente() {
 	
 }
 
-public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
-	super();
-	this.id = id;
-	this.nome = nome;
-	this.email = email;
-	this.cpfOuCnpj = cpfOuCnpj;
-	this.tipo = tipo.getCod();
+	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.cpfOuCnpj = cpfOuCnpj;
+		this.tipo = tipo.getCod();
 }
 
-public Integer getId() {
+	public Integer getId() {
 	return id;
 }
 
@@ -110,6 +112,14 @@ public void setTelefones(Set<String> telefones) {
 	this.telefones = telefones;
 }
 
+public List<Pedido> getPedidos() {
+	return pedidos;
+}
+
+public void setPedidos(List<Pedido> pedidos) {
+	this.pedidos = pedidos;
+}
+
 @Override
 public int hashCode() {
 	return Objects.hash(id);
@@ -126,6 +136,8 @@ public boolean equals(Object obj) {
 	Cliente other = (Cliente) obj;
 	return Objects.equals(id, other.id);
 }
+
+
 
 
 }

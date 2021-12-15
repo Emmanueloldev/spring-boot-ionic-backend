@@ -32,7 +32,7 @@ public class Produto implements Serializable {
 			inverseJoinColumns = @JoinColumn(name = "categoria_id")
 			) // NOME DO CAMPO QUE VAI SER A CHAVE ESTRANGEIRA
 	
-	private List<Categoria> categorias = new ArrayList<>();
+	private List<Categoria> categorias = new ArrayList<>(); //ASSOCIAÇÃO
 	
 	
 	public Produto() {
