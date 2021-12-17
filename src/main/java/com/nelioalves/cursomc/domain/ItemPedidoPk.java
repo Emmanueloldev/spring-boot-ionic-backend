@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 //PARA ESSA CLASSE AUXILIAR É PRECISO CRIAR SÓ GETTS SETTS E HASH CODE EQUALS
 
+
 @Embeddable
 public class ItemPedidoPk implements Serializable{
 	private static final long serialVersionUID = 1L;
