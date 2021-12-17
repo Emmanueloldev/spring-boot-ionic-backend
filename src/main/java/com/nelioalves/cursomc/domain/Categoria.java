@@ -11,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 //Classe da cama de DOMINIO
 @Entity //Classe entidade do JPA// Cria tabela no Bando de dados
@@ -23,7 +22,7 @@ public class Categoria implements Serializable {
 	private Integer id; //Na chave primária colocar @id//
 	private String nome;
 	
-	@JsonManagedReference
+	
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();
 	
