@@ -11,7 +11,6 @@ import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.services.CategoriaService;
 
 @RestController //CONTROLADOR REST
-
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
 
