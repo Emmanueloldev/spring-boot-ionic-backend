@@ -17,7 +17,7 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repo; // ( repo= OBJETO DE ACESSO A DADOS) DEPENDENCIA intanciando o objeto repo automaticamente pela anotação @Autowired//
 	
-	public Pedido buscar(Integer id) {
+	public Pedido find(Integer id) {
 		Optional <Pedido>obj = repo.findById(id); //"Busca objeto por id"//
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));

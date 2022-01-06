@@ -19,10 +19,10 @@ public class PedidoResource {
 	private PedidoService service; //ACESSANDO O SERVICE ( CAMADA SERVIÇO )
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id) {  //<?> indica que pode ser qq tipo//
+	public ResponseEntity<Pedido> find(@PathVariable Integer id) {  //<?> indica que pode ser qq tipo//
 		
 				
-		Pedido obj = service.buscar(id);        //Executa o serviço " buscar "
+		Pedido obj = service.find(id);        //Executa o serviço " buscar "
 		return ResponseEntity.ok().body(obj);
 		
 		

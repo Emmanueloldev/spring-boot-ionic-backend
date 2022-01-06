@@ -17,10 +17,33 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repo; // ( repo= OBJETO DE ACESSO A DADOS) DEPENDENCIA intanciando o objeto repo automaticamente pela anotação @Autowired//
 	
-	public Categoria buscar(Integer id) {
+	
+	
+	
+	
+	public Categoria find(Integer id) {            //"Busca objeto por id se ele existe"// find=buscar
 		Optional <Categoria>obj = repo.findById(id); //"Busca objeto por id"//
-		return obj.orElseThrow(() -> new ObjectNotFoundException(
+		return obj.orElseThrow(() -> new ObjectNotFoundException(             // EXCEÇÃO, caso o "Id" não exista
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+	}
+		
+	
+	
+	
+	
+	
+	public Categoria insert(Categoria obj) {        //" Inserir objeto"//
+		obj.setId(null);
+		return repo.save(obj);
+	}
+	
+	
+	
+	
+	
+	public Categoria update(Categoria obj) { // recebe uma categoria objeto "obj" como argumento
+		
+		return repo.save(obj);
 	}
 
 }
