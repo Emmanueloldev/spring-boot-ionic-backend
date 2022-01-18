@@ -102,7 +102,7 @@ public class CursomcApplication implements CommandLineRunner{
 				
 		
 		
-		cli1.getEndereco().addAll(Arrays.asList(e1, e2)); // Associar Cliente ao endereço e1 e e2.
+		cli1.getEnderecos().addAll(Arrays.asList(e1, e2)); // Associar Cliente ao endereço e1 e e2.
 		
 		
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));

@@ -33,7 +33,7 @@ public class Cliente implements Serializable {
 	
 	//CLIENTE SERIALIZA ENDEREÇO
 	@OneToMany(mappedBy= "cliente") // MAPEADO PELO CAMPO CLIENTE
-	private List<Endereco> endereco = new ArrayList<>(); //ASSOCIAÇÃO 
+	private List<Endereco> enderecos = new ArrayList<>(); //ASSOCIAÇÃO 
 	
 	@ElementCollection
 	@CollectionTable(name="TELEFONE")
@@ -98,12 +98,12 @@ public void setTipo(TipoCliente tipo) {
 	this.tipo = tipo.getCod();
 }
 
-public List<Endereco> getEndereco() {
-	return endereco;
+public List<Endereco> getEnderecos() {
+	return enderecos;
 }
 
-public void setEndereco(List<Endereco> endereco) {
-	this.endereco = endereco;
+public void setEnderecos(List<Endereco> enderecos) {
+	this.enderecos = enderecos;
 }
 
 public Set<String> getTelefones() {
