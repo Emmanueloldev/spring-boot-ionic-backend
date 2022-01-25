@@ -8,10 +8,15 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import com.nelioalves.cursomc.domain.Cliente;
+import com.nelioalves.cursomc.services.validation.ClienteUpdate;
 
+
+@ClienteUpdate // Anotação que faz a verificação do Cliente na hora de atualizar
 public class ClienteDTO implements Serializable {
 	private static final long serialVersionUID = 1L; 
 
+	
+	
 		
 	private Integer id;
 	@NotEmpty(message="Preenchimento obrigatório")

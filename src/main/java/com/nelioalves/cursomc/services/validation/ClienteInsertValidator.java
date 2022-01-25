@@ -43,7 +43,7 @@ public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert
 			
 			Cliente aux = repo.findByEmail(objDto.getEmail()); // Lógica pra testa se o "Email" já existe
 			if (aux != null) {
-				list.add(new FieldMessage("email", "Email já existente")); // Erro de validação
+				list.add(new FieldMessage("email", "Email já existente")); // Erro de validaçãoClienteInsert.java
 			}
 			
 		for (FieldMessage e : list) {
