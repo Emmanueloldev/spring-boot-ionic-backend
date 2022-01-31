@@ -94,6 +94,7 @@ public class CategoriaResource {
 	}
 	
 	
+	// BUSCA PAGINADA POR CATEGORIA //
 	
 	@RequestMapping(value="/page", method = RequestMethod.GET)
 	public ResponseEntity<Page<CategoriaDTO>> findPage(

@@ -47,4 +47,8 @@ public class BR {
 		return tin.equals(tin.substring(0, 9) + digit1.toString() + digit2.toString());
 	
 	}
+
+	public static int[] getWeightTin() {
+		return weightTin;
+	}
 }
