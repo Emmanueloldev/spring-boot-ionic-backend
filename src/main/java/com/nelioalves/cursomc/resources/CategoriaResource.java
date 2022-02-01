@@ -44,7 +44,7 @@ public class CategoriaResource {
 	}
 	
 	
-
+	//END POINT
 	@RequestMapping(method=RequestMethod.POST)	// Anotações do framework para reconhecer o metodo feito abaixo como metodo que vai ser mapeado no EndPoint CATEGORIA e no metodo POST
 	public ResponseEntity<Void> insert(@Valid @RequestBody CategoriaDTO objDto){ //@RequestBody faz o JASON ser convertido para o objeto JAVA automaticamente 
 		
